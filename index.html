@@ -21,6 +21,12 @@
 </head>
 
 <body class="bg-light">
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="sun" viewBox="0 0 16 16">
+      <path
+        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-8 col-xl-9">
@@ -117,6 +123,58 @@
                   </tbody>
                 </table>
               </div>
+            </div>
+            <div class="accordion mb-3" id="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                    aria-expanded="true" aria-controls="collapse1">
+                    簡化表單設計！Bootstrap Form 教學
+                  </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordion">
+                  <div class="accordion-body">
+                    讓我們來簡化表單設計的過程吧！在這篇教學中，我們將探索 Bootstrap 的 Form
+                    元件，讓表單設計變得輕鬆又美觀。我們將學習如何使用不同的表單控制項、佈局工具和驗證功能，提升用戶體驗並節省開發時間。透過 Bootstrap 的強大 Form
+                    元件，我們可以輕鬆打造出專業又方便使用的表單～
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    加強網頁互動！Bootstrap Modal 教學
+                  </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                  <div class="accordion-body">
+                    讓我們一起探索 Bootstrap 的 Modal 功能，這是一個強大的互動元件，可以讓我們在網頁中顯示彈出視窗，實現更多元化的互動效果。在這篇教學中，我們將學習如何使用 Bootstrap的
+                    Modal，包括觸發機制、自訂樣式和動畫效果，讓我們的網頁更加生動有趣～
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    華麗又實用！打造漂亮按鈕的 Bootstrap 教學
+                  </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                  <div class="accordion-body">
+                    在這篇教學中，我們將一起探索 Bootstrap 的按鈕元件，讓我們的網頁華麗又實用！我們將學習如何使用不同的按鈕樣式、大小和狀態，並添加圖標或下拉選單等功能。透過
+                    Bootstrap的強大按鈕元件，我們可以輕鬆打造出各種吸引人的互動元素～
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div id="alertContainer"></div>
+              <button type="button" class="btn btn-primary d-flex align-items-center" id="alertBtn">
+                <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill me-2">
+                  <use xlink:href="#sun" />
+                </svg>點我給你一個驚喜</button>
             </div>
             <form action="">
               <div class="form-floating mb-3">
@@ -225,9 +283,32 @@
       </div>
     </div>
   </div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
+  <script>
+    const alertContainer = document.getElementById('alertContainer')
+    const alertBtn = document.getElementById('alertBtn')
+
+    const appendAlert = (message, type) => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+
+      alertContainer.append(wrapper)
+    }
+
+
+    if (alertBtn) {
+      alertBtn.addEventListener('click', () => {
+        appendAlert('Hi!', 'danger')
+      })
+    }
+  </script>
 </body>
 
 </html>
