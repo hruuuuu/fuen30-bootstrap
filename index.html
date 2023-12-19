@@ -117,6 +117,28 @@
                 </table>
               </div>
             </div>
+            <form action="">
+              <div class="mb-3">
+                <label for="nameInput" class="form-label">姓名或暱稱</label>
+                <input type="email" class="form-control" id="nameInput" placeholder="請輸入姓名或暱稱">
+              </div>
+              <div class="mb-3">
+                <label for="replyInput" class="form-label">留言</label>
+                <textarea class="form-control" id="replyInput" rows="5"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="moreInput" class="form-label">還想了解關於Bootstrap的...</label>
+                <input class="form-control" list="moreList" id="moreInput" placeholder="請輸入...">
+                <datalist id="moreList">
+                  <option value="按鈕">
+                  <option value="模式對話框">
+                  <option value="圖片">
+                  <option value="表格">
+                </datalist>
+              </div>
+              <button type="reset" class="btn btn-outline-primary">清空</button>
+              <button type="submit" class="btn btn-primary">送出</button>
+            </form>
           </div>
         </div>
       </div>
