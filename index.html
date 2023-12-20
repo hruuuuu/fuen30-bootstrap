@@ -57,11 +57,42 @@
     <div class="row g-4">
       <div class="col-12 col-md-8 col-xl-9">
         <div class="py-5">
-          <div id="top" class="mb-5"></div>
           <div class="p-5 shadow-sm rounded bg-white">
-            <div class="image mb-5">
+            <!-- <div id="top" class="mb-5"></div> -->
+            <!-- <div class="image mb-5">
               <img src="https://i.etsystatic.com/isbl/c7612a/62815202/isbl_1680x420.62815202_n5y4l9sb.jpg?version=0"
                 class="object-fit-cover w-100 h-100 rounded" alt="封面">
+            </div> -->
+            <div id="carousel" class="carousel slide" style="width: 100%; height: 300px" data-bs-ride="carousel"
+              data-bs-theme="dark">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item h-100 active">
+                  <img src="https://i.etsystatic.com/isbl/c7612a/62815202/isbl_1680x420.62815202_n5y4l9sb.jpg?version=0"
+                    class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="https://pbs.twimg.com/media/FNf__fragAMh8bG.jpg"
+                    class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="https://pbs.twimg.com/media/FMsHg-cacAA2zMc.jpg:large"
+                    class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">上一張</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">下一張</span>
+              </button>
             </div>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
